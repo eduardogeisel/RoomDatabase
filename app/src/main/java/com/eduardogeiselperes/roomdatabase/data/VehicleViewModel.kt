@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.eduardogeiselperes.roomdatabase.model.Vehicle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

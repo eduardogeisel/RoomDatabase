@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.eduardogeiselperes.roomdatabase.R
-import com.eduardogeiselperes.roomdatabase.data.Vehicle
+import com.eduardogeiselperes.roomdatabase.model.Vehicle
 import com.eduardogeiselperes.roomdatabase.data.VehicleViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
