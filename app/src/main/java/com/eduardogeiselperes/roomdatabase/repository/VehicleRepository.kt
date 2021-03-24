@@ -1,6 +1,7 @@
-package com.eduardogeiselperes.roomdatabase.data
+package com.eduardogeiselperes.roomdatabase.repository
 
 import androidx.lifecycle.LiveData
+import com.eduardogeiselperes.roomdatabase.data.VehicleDao
 import com.eduardogeiselperes.roomdatabase.model.Vehicle
 
 class VehicleRepository(private val vehicleDao: VehicleDao) {

@@ -1,9 +1,11 @@
-package com.eduardogeiselperes.roomdatabase.data
+package com.eduardogeiselperes.roomdatabase.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.eduardogeiselperes.roomdatabase.data.VehicleDatabase
+import com.eduardogeiselperes.roomdatabase.repository.VehicleRepository
 import com.eduardogeiselperes.roomdatabase.model.Vehicle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

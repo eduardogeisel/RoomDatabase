@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.eduardogeiselperes.roomdatabase.R
-import com.eduardogeiselperes.roomdatabase.data.VehicleViewModel
+import com.eduardogeiselperes.roomdatabase.viewmodel.VehicleViewModel
 import kotlinx.android.synthetic.main.fragment_list.view.*
 
 
