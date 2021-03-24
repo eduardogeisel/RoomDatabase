@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 class VehicleViewModel (application: Application): AndroidViewModel(application) {
 
-    private val readAllData: LiveData<List<Vehicle>>
+    val readAllData: LiveData<List<Vehicle>>
     private val repository: VehicleRepository
 
     init {
