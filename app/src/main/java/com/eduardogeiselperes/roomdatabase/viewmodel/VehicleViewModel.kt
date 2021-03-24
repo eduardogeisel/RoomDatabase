@@ -34,7 +34,15 @@ class VehicleViewModel (application: Application): AndroidViewModel(application)
     }
 
     fun deleteVehicle(currentVehicle: Vehicle) {
-        TODO("Not yet implemented")
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteVehicle(currentVehicle)
+        }
+    }
+
+    fun deleteAllVehicles(){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteAllVehicles()
+        }
     }
 
 }
