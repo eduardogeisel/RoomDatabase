@@ -39,7 +39,7 @@ class AddFragment : Fragment() {
 
     private fun insertDataToDatabase() {
         val make = et_make.text.toString()
-        val model = et_make.text.toString()
+        val model = et_model.text.toString()
         val year = et_year.text
 
         if(inputCheck(make, model, year)){
