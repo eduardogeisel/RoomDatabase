@@ -40,6 +40,9 @@ class UpdateFragment : Fragment() {
             updateItem()
         }
 
+        // Add menu
+        setHasOptionsMenu(true)
+
         return view
     }
 
