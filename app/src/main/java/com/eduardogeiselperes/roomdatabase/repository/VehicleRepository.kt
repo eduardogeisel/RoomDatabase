@@ -14,7 +14,13 @@ class VehicleRepository(private val vehicleDao: VehicleDao) {
 
     suspend fun updateVehicle(vehicle: Vehicle) {
         vehicleDao.updateVehicle(vehicle)
-
     }
 
+    suspend fun deleteVehicle(vehicle: Vehicle){
+        vehicleDao.deleteVehicle(vehicle)
+    }
+
+    suspend fun deleteAllVehicles(){
+        vehicleDao.deleteAllVehicles()
+    }
 }
