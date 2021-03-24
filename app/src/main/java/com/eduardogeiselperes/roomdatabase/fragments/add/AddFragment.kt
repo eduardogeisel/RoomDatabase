@@ -1,20 +1,62 @@
 package com.eduardogeiselperes.roomdatabase.fragments.add
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.eduardogeiselperes.roomdatabase.R
+import com.eduardogeiselperes.roomdatabase.data.Vehicle
+import com.eduardogeiselperes.roomdatabase.data.VehicleViewModel
+import kotlinx.android.synthetic.main.fragment_add.*
+import kotlinx.android.synthetic.main.fragment_add.view.*
 
 
 class AddFragment : Fragment() {
+
+    private lateinit var vehicleViewModel: VehicleViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add, container, false)
+        val view = inflater.inflate(R.layout.fragment_add, container, false)
+
+        vehicleViewModel = ViewModelProvider(this).get(VehicleViewModel::class.java)
+
+        view.btn_add.setOnClickListener {
+            insertDataToDatabase()
+        }
+
+        return view
     }
+
+    private fun insertDataToDatabase() {
+        val make = et_make.text.toString()
+        val model = et_make.text.toString()
+        val year = et_year.text
+
+        if(inputCheck(make, model, year)){
+            // Create User Object
+            val vehicle = Vehicle(0, make, model, Integer.parseInt(year.toString()))
+            // Add Data to Database
+            vehicleViewModel.addVehicle(vehicle)
+            Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_LONG).show()
+            // Navigate Back
+            findNavController().navigate(R.id.action_addFragment_to_listFragment)
+        }else{
+            Toast.makeText(requireContext(), "Please fill out all fields.", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun inputCheck(firstName: String, lastName: String, age: Editable): Boolean{
+        return !(TextUtils.isEmpty(firstName) && TextUtils.isEmpty(lastName) && age.isEmpty())
+    }
+
 }
