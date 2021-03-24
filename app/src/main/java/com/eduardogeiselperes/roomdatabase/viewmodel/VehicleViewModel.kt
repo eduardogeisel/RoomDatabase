@@ -33,4 +33,8 @@ class VehicleViewModel (application: Application): AndroidViewModel(application)
         }
     }
 
+    fun deleteVehicle(currentVehicle: Vehicle) {
+        TODO("Not yet implemented")
+    }
+
 }
