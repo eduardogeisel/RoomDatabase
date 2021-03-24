@@ -3,6 +3,7 @@ package com.eduardogeiselperes.roomdatabase.fragments.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.eduardogeiselperes.roomdatabase.R
 import com.eduardogeiselperes.roomdatabase.model.Vehicle
@@ -28,6 +29,11 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         holder.itemView.tv_make.text = currentItem.make
         holder.itemView.tv_model.text = currentItem.model
         holder.itemView.tv_year.text = currentItem.year.toString()
+
+        holder.itemView.rowLayout.setOnClickListener {
+            val action = ListFragmentDirections.actionListFragmentToUpdateFragment(currentItem)
+            holder.itemView.findNavController().navigate(action)
+        }
     }
 
     fun setData(vehicle: List<Vehicle>){
