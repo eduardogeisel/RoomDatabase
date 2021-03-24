@@ -12,4 +12,9 @@ class VehicleRepository(private val vehicleDao: VehicleDao) {
         vehicleDao.addVehicle(vehicle)
     }
 
+    suspend fun updateVehicle(vehicle: Vehicle) {
+        vehicleDao.updateVehicle(vehicle)
+
+    }
+
 }
